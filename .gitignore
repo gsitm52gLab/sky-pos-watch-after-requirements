@@ -37,3 +37,12 @@ next-env.d.ts
 
 # local project documents
 docs-local/
+
+# reference images and docs (large binary files)
+01.docs/
+
+# claude code tooling
+.serena/
+
+# playwright test results
+test-results/

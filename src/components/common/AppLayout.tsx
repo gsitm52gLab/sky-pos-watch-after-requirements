@@ -16,6 +16,7 @@ const areaTabs: { key: AreaType; label: string; icon: string; activeClass: strin
   { key: "int", label: "내부 운영", icon: "🏢", activeClass: "bg-[#1a8a5c] text-white" },
   { key: "ai", label: "AI 운영", icon: "🤖", activeClass: "bg-[#6b3fa0] text-white" },
   { key: "erp", label: "ERP 업무", icon: "📊", activeClass: "bg-[#d4760a] text-white" },
+  { key: "kac", label: "ERP ASIS 업무", icon: "🏛️", activeClass: "bg-[#b91c1c] text-white" },
 ];
 
 export function AppLayout({ children }: { children: ReactNode }) {
@@ -49,6 +50,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
       int: "/int/scr-int-001",
       ai: "/ai/scr-ai-001",
       erp: "/erp/scr-erp-001",
+      kac: "/kac/scr-kac-001",
     };
     router.push(firstPaths[newArea]);
   };
@@ -57,6 +59,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
     : pathname.startsWith("/int") ? "int"
     : pathname.startsWith("/ai") ? "ai"
     : pathname.startsWith("/erp") ? "erp"
+    : pathname.startsWith("/kac") ? "kac"
     : area;
 
   if (detectedArea !== area) {
